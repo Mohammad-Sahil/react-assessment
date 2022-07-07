@@ -22,6 +22,7 @@ const EditData = () => {
              console.log(findData);
         } catch (error) {
          console.log(error)
+         alert('Roll not found')
         }
      }
 
@@ -48,7 +49,8 @@ const EditData = () => {
           .patch(`https://assessmenttt-backend.herokuapp.com/v2/student/${rollData}`, details)
           .then(() => alert('Student Details Updated'))
           .catch(err => {
-            console.error(err);
+            console.error(err)
+            alert('Roll no. should be unique')
           });
       }
       return (

@@ -6,19 +6,30 @@ const db = require('../db/connection');
 var cors = require('cors');
 
 app.use(express.json());
+
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin", "*"),
     res.setHeader("Access-Control-Allow-Headers", "*"),
     next()
 })
 
-//using cors to allow cross origin resource sharing
-app.use(
-    cors({
-      origin: 'https://react-assessment-delta.vercel.app/',
-      credentials: true,
-    })
-  );
+// using cors to allow cross origin resource sharing
+// var allowedOrigins = ['http://localhost:8000','https://react-assessment-delta.vercel.app/'];
+const corsOptions = {
+  methods: "GET,POST,PATCH,DELETE",
+//   credentials: true,
+//   origin : function(origin,callback) {
+//     if(allowedOrigins.indexOf(origin) !== -1 || !origin){
+//       callback(null,true);
+//     }else{
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+};
+app.use(cors(corsOptions));
+
+// app.use(morgan("dev"));
+
 
 app.get('/', (req,res) => {
     res.status(200).send("<h1>Sever is running at localhost:${port}</h1>");

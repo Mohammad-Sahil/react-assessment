@@ -35,7 +35,7 @@ const UploadData = () => {
           .post('https://assessmenttt-backend.herokuapp.com/v2/student', details)
           .then(() => alert('Student Details Posted'))
           .catch(err => {
-            console.error(err);
+            alert('Roll No. should be unique')
           });
       }
       return (

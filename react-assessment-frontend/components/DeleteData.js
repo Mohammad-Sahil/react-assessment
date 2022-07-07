@@ -13,6 +13,7 @@ const DeleteData = () => {
             console.log(findData);
        } catch (error) {
         console.log(error)
+        alert('Roll not found')
        }
     }
 
