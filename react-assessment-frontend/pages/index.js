@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import UploadData from '../components/UploadData';
 import GetData from '../components/GetData';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Button from '@mui/material/Button';
 import EditData from '../components/EditData';
 import DeleteData from '../components/DeleteData';
