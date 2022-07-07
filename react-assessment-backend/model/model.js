@@ -6,7 +6,7 @@ const studentDetailsSchema = new mongoose.Schema({
         required: true,
         minlength: 3
     },
-    class: {
+    classs: {
         type: Number,
         required: true
     },
