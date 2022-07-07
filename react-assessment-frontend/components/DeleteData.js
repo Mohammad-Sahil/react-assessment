@@ -3,10 +3,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const DeleteData = () => {
-    const [findData, setFindData] = useState([]);
+    const [findData, setFindData] = useState({});
     const [inputData, setInputData] = useState();
 
-    async function handleFindOne() {
+    const handleFindOne = async (e) => {
        try {
             const response = await axios.get(`http://localhost:8000/v1/student/${inputData}`);
             setFindData(response.data);
@@ -15,29 +15,35 @@ const DeleteData = () => {
         console.log(error)
        }
     }
-    const deleteData = async () => {}
-    // useEffect(() => {
-    //   handleFindOne()
-    // },[])
+
+
+    const deleteData = async () => {
+      console.log(findData.roll)
+        axios
+          .delete(`http://localhost:8000/v2/student/${findData.roll}`)
+          .then(() => alert('Student Detail deleted'))
+          .catch(err => {
+            console.error(err);
+          });
+          setFindData({});
+    }
+
   return (
     <div style={{display: "grid"}}>
-     <form className="form_upload">
+       <div className="form_upload form_delete mx-auto">
        <TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Enter Roll No., you want to delete" variant="filled" onChange={(e) => setInputData(e.target.value)} type="text" name="name" required/>
-        <Button onClick={handleFindOne} className='mx-2 text-dark' style={{borderColor: 'rgba(0,0,0,0.5)', borderRadius: "20px", marginTop: "10px", width: "30%", padding: "6px"}} variant="outlined">Submit</Button>
-        </form>
+        <Button onClick={handleFindOne} className='mx-2 text-dark' style={{borderColor: 'rgba(0,0,0,0.5)', borderRadius: "20px", marginTop: "10px", width: "50%", padding: "6px"}} variant="outlined">Submit</Button>
+       </div>
+      { findData.name && <div className="getdata_card deletedata_card" key={findData._id}>
+            <p>Name: <span>{findData.name}</span></p>
+            <p>Class: <span>{findData.classs}</span></p>
+            <p>Section: <span>{findData.section}</span></p>
+            <p>Peyment Status: <span>{findData.paidStatus ? <>Fee is Paid</> : <>Fee is not paid</>}</span></p>
+            <p>Attendance Percent: <span>{findData.attendancePercent}</span></p>
+            <p>Roll No: <span>{findData.roll}</span></p>
+            <Button onClick={deleteData} className='mx-2 text-dark' style={{borderColor: 'rgba(0,0,0,0.5)', borderRadius: "20px", marginTop: "20px", width: "100%", padding: "6px"}} variant="outlined">Delete Data</Button>
+            </div>}
         
-          {findData?.map((data) => {
-            return <div key={data._id} style={{padding: "20px",margin: "10px",background: "#eee", width: "300px"}}>
-            <div>Name: {data.name}</div>
-            <div>Class: {data.classs}</div>
-            <div>Section: {data.section}</div>
-            <div>Peyment Status: {data.paidStatus ? <>Fee is Paid</> : <>Fee is not paid</>}</div>
-            <div>Attendance Percent: {data.attendancePercent}</div>
-            <div>Roll No.: {data.roll}</div>
-            <Button onClick={deleteData} className='mx-2 text-dark' style={{borderColor: 'rgba(0,0,0,0.5)', borderRadius: "20px", marginTop: "10px", width: "30%", padding: "6px"}} variant="outlined">Delete Data</Button>
-            </div>
-        })}
-     
     </div>
   )
 }
