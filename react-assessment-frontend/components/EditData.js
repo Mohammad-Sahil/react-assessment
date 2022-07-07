@@ -19,6 +19,9 @@ const EditData = () => {
              const response = await axios.get(`https://assessmenttt-backend.herokuapp.com/v1/student/${inputData}`);
              setFindData(response.data);
              setRollData(response.data.roll);
+              if(!response.data.name){
+                alert('Roll not found')
+            }
              console.log(findData);
         } catch (error) {
          console.log(error)

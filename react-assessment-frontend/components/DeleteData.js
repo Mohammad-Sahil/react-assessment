@@ -10,6 +10,9 @@ const DeleteData = () => {
        try {
             const response = await axios.get(`https://assessmenttt-backend.herokuapp.com/v1/student/${inputData}`);
             setFindData(response.data);
+            if(!response.data.name){
+                alert('Roll not found')
+            }
             console.log(findData);
        } catch (error) {
         console.log(error)
