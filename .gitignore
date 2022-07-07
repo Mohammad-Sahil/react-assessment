@@ -1,3 +1,4 @@
+!.gitignore
 react-assessment-frontend/node_modules
 react-assessment-backend/node_modules
 react-assessment-frontend/pack-lock.json
