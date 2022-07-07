@@ -14,3 +14,34 @@ a {
 * {
   box-sizing: border-box;
 }
+.layout_body{
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.layout_nav{
+  background-color: #fff;
+  width: 100vw;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout_footer{
+  background-color: #fff;
+  width: 100vw;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(71, 71, 71);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

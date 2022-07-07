@@ -16,10 +16,11 @@ const GetData = () => {
         getData()
     },[])
   return (
-    <div style={{display: "grid"}}>
-        
+    <div className='row'>
+        <div className='col-md-11 col-10'>
+        <div className="row">
         {data.map((data) => {
-            return <div style={{padding: "20px",margin: "10px",background: "#eee", width: "300px"}}>
+            return <div key={data._id} className="getdata_card col-md-4 col-12">
             <div>Name: {data.name}</div>
             <div>Class: {data.classs}</div>
             <div>Section: {data.section}</div>
@@ -28,7 +29,8 @@ const GetData = () => {
             <div>Roll No.: {data.roll}</div>
             </div>
         })}
-    
+        </div>
+        </div>
     </div>
   )
 }
