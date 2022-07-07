@@ -1,3 +1,4 @@
+import { Button, Checkbox, TextField } from "@mui/material";
 import axios from "axios";
 import Head from "next/head";
 import { useState } from "react";
@@ -45,14 +46,14 @@ const UploadData = () => {
             <link rel="icon" href="/favicon.ico" />
           </Head>
     
-        <form onSubmit={handlePost}>
-       <div><input onChange={handleInputChange} type="text" name="name" required/></div>
-       <div><input onChange={handleInputChange} type="number" name="classs" required/></div>
-       <div><input onChange={handleInputChange} type="text" name="section" required/></div>
-       <div><input onChange={handleInputChange} type="checkbox" name="paidStatus" required/></div>
-       <div><input onChange={handleInputChange} type="text" name="roll" required/></div>
-       <div><input onChange={handleInputChange} type="number" name="attendancePercent" required/></div>
-       <div><input onClick={handlePost} type="submit"/></div>
+        <form onSubmit={handlePost} className="form_upload">
+        <div><TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Name" variant="filled" onChange={handleInputChange} type="text" name="name" required/></div>
+        <div><TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Class" variant="filled" onChange={handleInputChange} type="number" name="classs" required/></div>
+        <div><TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Section" variant="filled" onChange={handleInputChange} type="text" name="section" required/></div>
+        <div><TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Roll No." variant="filled" onChange={handleInputChange} type="text" name="roll" required/></div>
+        <div><TextField id="filled-basic" style={{width: "100%", marginBottom: "15px"}} label="Attendance Percent" variant="filled" onChange={handleInputChange} type="number" name="attendancePercent" required/></div>
+        <div><div>Has the Student paid the amount? <Checkbox onChange={handleInputChange} type="checkbox" name="paidStatus" defaultChecked required/></div></div>
+       <div><Button onClick={handlePost} className='mx-2 text-dark' style={{borderColor: 'rgba(0,0,0,0.5)', borderRadius: "20px", marginTop: "10px", width: "30%", padding: "6px"}} variant="outlined">Submit</Button></div>
         </form>
         </div>
       )

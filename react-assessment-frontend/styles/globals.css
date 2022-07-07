@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-y: hidden !important;
 }
 
 a {
@@ -29,6 +30,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgba(0, 0, 0, 0.5);
 }
 .layout_footer{
   background-color: #fff;
@@ -44,4 +46,38 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.getdata_card{
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 7px;
+}
+.getdata_card p{
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0;
+  margin-bottom: 5px;
+}
+.getdata_card p span{
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+.form_upload{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form_upload > div{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form_upload > div > input{
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  padding: 10px;
+  margin-bottom: 10px;
 }

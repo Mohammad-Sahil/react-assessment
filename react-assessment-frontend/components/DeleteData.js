@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 
 const DeleteData = () => {
     const [data, setData] = useState([]);

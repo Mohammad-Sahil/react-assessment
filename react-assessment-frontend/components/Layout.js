@@ -11,7 +11,7 @@ const Layout = ({children}) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <div className="layout_body" style={{height: "100vh"}}>
-            <div className="layout_nav display-4 text-dark">Basic CRUD Operation</div>
+            <div className="layout_nav display-3 text-dark">Basic CRUD Operation</div>
             <div className="layout_content">
                 {children}
             </div>
