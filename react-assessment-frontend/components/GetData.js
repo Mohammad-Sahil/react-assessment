@@ -5,7 +5,7 @@ const GetData = () => {
     const [data, setData] = useState([]);
     async function getData() {
        try {
-            const response = await axios.get('http://localhost:8000/v1/student');
+            const response = await axios.get('https://assessmenttt-backend.herokuapp.com/v1/student');
             setData(response.data);
             console.log(response.data);
        } catch (error) {

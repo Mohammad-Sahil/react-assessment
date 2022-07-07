@@ -32,7 +32,7 @@ const UploadData = () => {
         };
         console.log(details)
         axios
-          .post('http://localhost:8000/v2/student', details)
+          .post('https://assessmenttt-backend.herokuapp.com/v2/student', details)
           .then(() => alert('Student Details Posted'))
           .catch(err => {
             console.error(err);

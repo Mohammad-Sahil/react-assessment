@@ -8,7 +8,7 @@ const DeleteData = () => {
 
     const handleFindOne = async (e) => {
        try {
-            const response = await axios.get(`http://localhost:8000/v1/student/${inputData}`);
+            const response = await axios.get(`https://assessmenttt-backend.herokuapp.com/v1/student/${inputData}`);
             setFindData(response.data);
             console.log(findData);
        } catch (error) {
@@ -20,7 +20,7 @@ const DeleteData = () => {
     const deleteData = async () => {
       console.log(findData.roll)
         axios
-          .delete(`http://localhost:8000/v2/student/${findData.roll}`)
+          .delete(`https://assessmenttt-backend.herokuapp.com/v2/student/${findData.roll}`)
           .then(() => alert('Student Detail deleted'))
           .catch(err => {
             console.error(err);

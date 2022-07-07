@@ -16,7 +16,7 @@ const EditData = () => {
     })
     const handleFindOne = async (e) => {
         try {
-             const response = await axios.get(`http://localhost:8000/v1/student/${inputData}`);
+             const response = await axios.get(`https://assessmenttt-backend.herokuapp.com/v1/student/${inputData}`);
              setFindData(response.data);
              setRollData(response.data.roll);
              console.log(findData);
@@ -45,7 +45,7 @@ const EditData = () => {
         };
         console.log(details)
         axios
-          .patch(`http://localhost:8000/v2/student/${rollData}`, details)
+          .patch(`https://assessmenttt-backend.herokuapp.com/v2/student/${rollData}`, details)
           .then(() => alert('Student Details Updated'))
           .catch(err => {
             console.error(err);

@@ -21,7 +21,7 @@ app.use(
   );
 
 app.get('/', (req,res) => {
-    res.status(200).send(`<h1>Sever is running at localhost:${port}</h1>`);
+    res.status(200).send("<h1>Sever is running at localhost:${port}</h1>");
 });
 
 app.get('/v1/student', async(req,res) => {
@@ -92,6 +92,6 @@ app.patch('/v2/student/:roll', async(req,res) => {
 });
 
 // listen data 
-app.listen(8000, (req,res) => {
+app.listen(port, (req,res) => {
     console.log(`successfully connected to port ${port}`)
 })
